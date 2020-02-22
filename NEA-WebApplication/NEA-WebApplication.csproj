@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>NEA_WebApplication</RootNamespace>
+    <RootNamespace>NeaWebApplication</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,9 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers" />
-    <Folder Include="Models" />
-    <Folder Include="Views" />
+    <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Home" />
+    <Folder Include="wwwroot\js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PseudocodeProcessor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\ReWrite\PseudocodeProcessor\PseudocodeProcessor\bin\Debug\netcoreapp2.2\PseudocodeProcessor.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
