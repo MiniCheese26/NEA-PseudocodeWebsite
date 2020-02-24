@@ -1,5 +1,6 @@
 const submitButton = document.getElementById("submit");
 const resetButton = document.getElementById("reset");
+const copyButton = document.getElementById("copy");
 const outputArea = document.getElementById("output");
 const inputArea = document.getElementById("input");
 
@@ -13,7 +14,7 @@ function failureFunction(textarea) {
     resetSubmit();
 }
 
-submitButton.addEventListener("click", () => {
+function sendCode() {
     submitButton.disabled = true;
     submitButton.innerHTML = "Processing...";
     const xhr = new XMLHttpRequest();
@@ -47,7 +48,7 @@ submitButton.addEventListener("click", () => {
     const versionSelect = document.getElementById("language-version");
     const versionSelected = versionSelect.options[versionSelect.selectedIndex].value;
 
-    const url = "http://localhost:55712/home/translate?code=" + code + "&langaugeVersion=" + versionSelected;
+    const url = "http://localhost:55712/home/translate?code=" + encodeURIComponent(code) + "&langaugeVersion=" + versionSelected;
 
     xhr.timeout = 5000;
     xhr.ontimeout = function () {
@@ -58,11 +59,15 @@ submitButton.addEventListener("click", () => {
     };
     xhr.open("get", url, true);
     xhr.send();
-});
+};
 
-resetButton.addEventListener("click", () => {
+function resetCodeAreas() {
     inputArea.value = "";
     outputArea.value = "";
-});
+};
 
+function copyCodeOutput() {
+    outputArea.select();
+    document.execCommand("copy");
+};
 
