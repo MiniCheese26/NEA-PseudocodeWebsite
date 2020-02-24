@@ -1,6 +1,4 @@
 const submitButton = document.getElementById("submit");
-const resetButton = document.getElementById("reset");
-const copyButton = document.getElementById("copy");
 const outputArea = document.getElementById("output");
 const inputArea = document.getElementById("input");
 
@@ -59,15 +57,15 @@ function sendCode() {
     };
     xhr.open("get", url, true);
     xhr.send();
-};
+}
 
 function resetCodeAreas() {
     inputArea.value = "";
     outputArea.value = "";
-};
+}
 
 function copyCodeOutput() {
     outputArea.select();
     document.execCommand("copy");
-};
+}
 
