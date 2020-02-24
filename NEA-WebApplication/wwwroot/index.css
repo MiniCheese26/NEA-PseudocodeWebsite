@@ -67,16 +67,6 @@ header {
     flex-wrap: nowrap;
 }
 
-@media screen and (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-    .textarea-border {
-        border-right: none;
-        border-bottom: 1px solid #000;
-    }
-}
-
 .main-item {
     display: flex;
     flex: 1;
@@ -111,4 +101,14 @@ footer > div > h1 {
     font-family: Lato, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     font-weight: 525;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .textarea-border {
+        border-right: none;
+        border-bottom: 1px solid #000;
+    }
 }
