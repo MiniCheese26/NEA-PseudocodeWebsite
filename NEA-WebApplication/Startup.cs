@@ -20,10 +20,9 @@ namespace NeaWebApplication
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            //app.UseStaticFiles();
-            //app.UseDefaultFiles();
+            
             app.UseMvcWithDefaultRoute();
+            app.UseStaticFiles();
         }
     }
 }
